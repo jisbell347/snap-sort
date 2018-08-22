@@ -8,14 +8,10 @@ const str = "It indicates a synchronic distortion in the areas emanating triolic
 	"ship without warp drive could cross in the given time. Resistance is futile.";
 
 let words = str.toLowerCase().split(' ');
-words.sort(function(a, b) {
-	let c = a.toLowerCase();
-	let d = b.toLowerCase();
-	return(c < d) ? -1 : (c > d) ? 1 : 0;
-});
+const newWords = words.sort();
 
-let newWords = words.filter(word => {
+const filteredWords = words.filter(word => {
 	return !word.includes("sensor");
 })
 
-console.log(newWords.join(' '));
+console.log(filteredWords.join(' '));
